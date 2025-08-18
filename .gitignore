@@ -1,3 +1,38 @@
+# Rails credentials and secrets
+/config/master.key
+/config/credentials.yml.enc
+/config/credentials/*.yml.enc
+
+# Node/Yarn
+/node_modules
+/yarn-error.log
+
+# Byebug
+/.byebug_history
+
+# Coverage
+/coverage/
+
+# System files
+/.DS_Store
+
+# Editor swap files
+*~
+*.swp
+*.swo
+
+# Env files
+/.env
+/.env.*
+
+# Public assets
+/public/assets
+/public/packs
+/public/packs-test
+/public/packs-dev
+
+# Sprockets cache
+/tmp/cache/assets
 # Created by https://www.gitignore.io/api/node
 
 .DS_Store
@@ -36,7 +71,7 @@ jspm_packages
 /.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
+/db/*.sqlite3*
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
