@@ -67,10 +67,15 @@ describe "editing recipes" do
     #       implemented HTML label
     #       (i.e. clicking on the <label> checks/unchecks the box).
     it "should be able to remove ingredients" do
-      @recipe.ingredients.create(name: 'Paprika')
-      @recipe.ingredients.create(name: 'Clove')
-      @recipe.ingredients.create(name: 'Ginger')
-      @recipe.ingredients.create(name: 'Cider')
+      paprika = Ingredient.create(name: 'Paprika')
+      clove = Ingredient.create(name: 'Clove')
+      ginger = Ingredient.create(name: 'Ginger')
+      cider = Ingredient.create(name: 'Cider')
+
+      @recipe.ingredients << paprika
+      @recipe.ingredients << clove
+      @recipe.ingredients << ginger
+      @recipe.ingredients << cider
 
       expect(@recipe.ingredients.count).to eq(4)
 
@@ -83,7 +88,7 @@ describe "editing recipes" do
 
       click_button('Update Recipe')
 
-      expect(@recipe.ingredients.count).to eq(0)
+      expect(@recipe.reload.ingredients.count).to eq(0)
     end
   end
 end
