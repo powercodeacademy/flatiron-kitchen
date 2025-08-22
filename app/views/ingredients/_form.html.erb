@@ -1,4 +1,3 @@
-<%# ingredient_id = ingredient.persisted? ? "edit_ingredient_#{ingredient.id}" : "new_ingredient" %>
 <%= form_with(model: ingredient, local: true) do |form| %>
   <% if ingredient.errors.any? %>
     <div id="error_explanation">
