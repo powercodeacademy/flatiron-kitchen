@@ -7,7 +7,7 @@ describe "creating recipes" do
     it "should have a form to create the recipes" do
       visit new_recipe_path
 
-      expect(page).to have_css("form#new_recipe")
+      expect(page).to have_css("form[action='#{recipes_path}']")
     end
 
     # Does the recipe get created when the form is submitted?

@@ -9,7 +9,7 @@ describe "editing recipes" do
 
     # Is there a form with the given HTML id?
     it "should have a form to edit the recipe" do
-      expect(page).to have_css("form#edit_recipe_#{@recipe.id}")
+      expect(page).to have_css("form[action='#{recipe_path(@recipe)}']")
     end
 
     # Does the form correctly update the recipe name?

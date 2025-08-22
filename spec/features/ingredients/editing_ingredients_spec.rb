@@ -10,7 +10,7 @@ describe "editing ingredients" do
     # Is there a form with the given id? (check out how it's
     # interpolated below)
     it "should have a form to edit the ingredient" do
-      expect(page).to have_css("form#edit_ingredient_#{@ingredient.id}")
+      expect(page).to have_css("form[action='#{ingredient_path(@ingredient)}']")
     end
 
     # Does the ingredient name get updated when the form is submitted?
