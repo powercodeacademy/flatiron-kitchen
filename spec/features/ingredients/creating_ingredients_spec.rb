@@ -8,7 +8,7 @@ describe "creating ingredients" do
 
     # Is there a form with the given HTML ID?
     it "should have a form to create the ingredients" do
-      expect(page).to have_css("form#new_ingredient")
+      expect(page).to have_css("form[action='#{ingredients_path}']")
     end
 
     # After submitting the form out with the given name, does the
