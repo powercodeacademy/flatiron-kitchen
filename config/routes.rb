@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :ingredients, only: %i[edit update]
+  resources :ingredients, only: %i[new create edit update]
 end
