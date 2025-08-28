@@ -1,12 +1,2 @@
 <h1>New Recipe</h1>
-<%= form_with model: @recipe, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :ingredient_ids, "Ingredients:" %>
-  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |i| %>
-    <%= i.check_box %>
-    <%= i.label %>
-  <% end %>
-  <br>
-  <%= f.submit "Create Recipe" %>
-<% end %> 
+<%= render partial: "form", locals: {submit_label: "Create Recipe"} %>

@@ -1,6 +1,2 @@
 <h1>Edit ingredient</h1>
-<%= form_with model: @ingredient, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Update Ingredient" %>
-<% end %> 
+<%= render partial: "form", locals: {submit_label: "Update Ingredient"} %>
