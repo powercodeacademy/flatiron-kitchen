@@ -1,0 +1,24 @@
+<h2>Add Ingredient</h2>
+
+<%= form_with model: @ingredient, local: true do |f| %>
+
+  <% if @ingredient.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h5>
+      <ul>
+        <% @ingredient.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+      <%= f.label :name, "Ingredient Name" %>
+      <br />
+      <%= f.text_field :name %>
+      <br />
+
+      <%= f.submit "Create Ingredient" %>
+  </div>
+<% end %>

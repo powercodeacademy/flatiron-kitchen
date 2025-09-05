@@ -1,0 +1,30 @@
+<h2>Edit Recipe</h2>
+
+<%= form_with model: @recipe, local: true do |f| %>
+
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h5>
+      <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+      <%= f.label :name, "Recipe Name" %>
+      <br />
+      <%= f.text_field :name %>
+      <br />
+
+      <% @ingredients.each do |ingredient| %>
+        <%= check_box_tag "selected_ingredients[]", ingredient.id, @recipe.ingredients.include?(ingredient), id: ingredient.name %>
+        <%= label_tag ingredient.name, ingredient.name %>
+        <br />
+      <% end %>
+
+      <%= f.submit "Update Recipe" %>
+  </div>
+<% end %>
